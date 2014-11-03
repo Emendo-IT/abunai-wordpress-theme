@@ -1,13 +1,15 @@
 <?php
 /*
-Author: Eddie Machado
-URL: htp://themble.com/bones/
-
-This is where you can drop your custom functions or
-just edit things like thumbnail sizes, header images,
-sidebars, comments, ect.
+Author: Bas Grolleman
+URL: https://bitbucket.org/bgrolleman/abunai-wordpress-theme
 */
-
+// Add Support
+add_theme_support('custom-header', array(
+  'width' => 752,
+  'height' => 134
+));
+//
+//
 // LOAD BONES CORE (if you remove this, the theme will break)
 require_once( 'library/bones.php' );
 

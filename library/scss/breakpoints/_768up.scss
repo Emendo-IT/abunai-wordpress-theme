@@ -18,6 +18,8 @@ GENERAL STYLES
 *********************/
 
 body {}
+.desktop { display: block; }
+.mobile { display: none; }
 
 /*********************
 LAYOUT & GRID STYLES
@@ -142,7 +144,7 @@ SIDEBARS & ASIDES
 *********************/
 
 .sidebar {
-	margin-top: 2.2em;
+	margin-top: 0;
 }
 
 	.widgettitle {
@@ -152,7 +154,7 @@ SIDEBARS & ASIDES
 
 	.widget {
 		padding: 0 10px;
-		margin: 2.2em 0;
+		margin: 0 0 2.2em 0;
 
 		ul {
 			li {

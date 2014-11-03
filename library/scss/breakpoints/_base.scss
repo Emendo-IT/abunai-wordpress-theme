@@ -20,8 +20,11 @@ body {
 	font-size: 100%;
 	line-height: 1.5;
 	color: $text-color;
-	background-color: $gray;
+	background-color: $abunai-gray;
   -webkit-font-smoothing: antialiased;
+}
+.desktop {
+  display: none;
 }
 
 /********************
@@ -152,11 +155,12 @@ HEADER STYLES
 *********************/
 
 .header {
-	background-color: $black;
+	background-color: $abunai-gray;
+  margin-top: 5px;
 }
 
 	#logo {
-		margin: 0.75em 0;
+		margin: 0;
 
 		a {
 			color: $white;
@@ -826,6 +830,9 @@ SIDEBARS & ASIDES
 	.widgettitle {}
 
 	.widget {
+    background-color: $white;
+    border: 1px solid $black;
+    border-radius: 3px;
 
 		ul {
 
@@ -861,8 +868,8 @@ FOOTER STYLES
 
 .footer {
 	clear: both;
-	background-color: $black;
-	color: $light-gray;
+	background-color: $abunai-gray;
+	color: $text-color;
 }
 
 	/*
