@@ -1,8 +1,9 @@
-# Abunai Wordpress Theme
+# Abunai Genesis Theme
 
-This is the Abunai Wordpress Theme
-Based on the Bonus Theme Framework
+This theme is made for the Abunai! Convention in the Netherlands.
+It''s using the Genesis Framework to keep the base simple.
 
-Authors:
-  Bas Grolleman <bgrolleman@emendo-it.nl>
+## Authors
+
+* Bas Grolleman <bgrolleman@emendo-it.nl>
 

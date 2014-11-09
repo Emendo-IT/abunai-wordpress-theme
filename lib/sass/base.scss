@@ -1,0 +1,24 @@
+// This is the Base SCSS File, it load's all other elements
+
+// Starting with the Genesis Example
+@import 'init';
+
+// Manage Header
+@import 'header';
+
+// Media Specific stuff
+@media only screen and (max-width: 800px) {
+  @import 'mobile';
+}
+
+@media only screen and (max-width: 960px) {
+  @import '960';
+}
+
+@media only screen and (max-width: 1200px) {
+  @import '1200';
+}
+
+@media only screen and (min-width: 800px) {
+  @import 'desktop';
+}

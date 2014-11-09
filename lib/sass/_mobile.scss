@@ -1,0 +1,9 @@
+.mobileonly {
+  display: block;
+}
+.site-header { 
+  min-height: 0px;
+  .wrap {
+    padding: 0px;
+  }
+}
