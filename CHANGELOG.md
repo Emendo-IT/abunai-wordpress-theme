@@ -1,5 +1,8 @@
 # Abunai Changelog
 
+## 0.4
+- Theme based on Genesis framework
+
 ## 0.3
 - Git flow acting strange, creating new release
 
