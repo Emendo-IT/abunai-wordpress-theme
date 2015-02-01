@@ -25,4 +25,4 @@ add_theme_support( 'genesis-footer-widgets', 3 );
 //* Load all elements of child theme
 include_once( 'lib/settings.php' );
 include_once( 'lib/header.php' );
-
+include_once( 'lib/handleiding.php' );
