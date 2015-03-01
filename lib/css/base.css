@@ -1890,4 +1890,18 @@ li.comment {
   .desktoponly {
     display: block;
   }
+
+  /* Sidebar */
+  /* line 11, ../sass/_desktop.scss */
+  section.social-icons-widget .widget-wrap {
+    overflow: auto;
+  }
+  /* line 13, ../sass/_desktop.scss */
+  section.social-icons-widget .widget-wrap ul, section.social-icons-widget .widget-wrap li {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border: none;
+  }
 }
