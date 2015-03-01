@@ -1,0 +1,104 @@
+#!/bin/bash
+# vim: foldmethod=marker ts=4
+#
+# Settings
+PROJECT=abunai
+MYSQLBOX=mysqldev$PROJECT
+DEVBOX=wpdev$PROJECT
+PORT=8080
+NAME=wpdev$PROJECT
+
+#
+# dev - Basic script to build/run docker test environments
+# Author: Bas Grolleman
+#
+# show_help() {{{
+show_help() {
+	echo "
+Usage: $0 -v command
+
+Command:
+  setup - Check dependencies installed and create docker images if missing
+  rebuild - Recreate the wordpress image, you lose local changes to the container
+  start - Start containers
+  stop - stop containers
+  enter - Get shell access to containers using docker-enter
+
+Options:
+	-v Verbose
+	-e Example
+"
+	exit 1;
+}
+# }}}
+# verbose() {{{
+verbose() {
+	if [ $VERBOSE -gt 0 ]; then
+		echo "$1"
+	fi
+}
+# }}}
+# Setup (Show Help, Set Options) {{{
+# No Arguments, show help
+if [ $# -lt 1 ]; then
+	show_help
+fi
+# Get Options
+VERBOSE=0
+while getopts \?e:v opt ;do
+case "$opt" in
+	v) VERBOSE=1;;
+	e) example="$OPTARG";;
+	\?) show_help;;
+esac
+done
+shift $((OPTIND - 1))
+COMMAND=$1
+verbose "Starting $0"
+verbose "Verbose on"
+# }}}
+case "$COMMAND" in
+  'setup')
+    verbose "## Starting Setup"
+    # Please note this script is written with Ubuntu in mind, pull request to support other distro's welcome
+    if [ ! -x /usr/bin/docker ]; then
+      echo "No docker, installing using apt"
+      sudo apt-get install -y docker
+    fi
+    sudo docker start $MYSQLBOX
+    if [ $? -gt 0 ]; then
+      verbose "No $MYSQLBOX image, going to create it"
+      sudo docker run --name $MYSQLBOX -e MYSQL_ROOT_PASSWORD=development -d mysql
+    fi
+    sudo docker start $DEVBOX
+    if [ $? -gt 0 ]; then
+      verbose "No $DEVBOX image, going to create it"
+      sudo docker run --name $DEVBOX -e WORDPRESS_DB_NAME=$DEVBOX -p $PORT:80 -v $(pwd):/srv --link $MYSQLBOX:mysql -d wordpress
+    fi
+    ;;
+  start)
+    verbose "## Start Environment"
+    sudo docker start $MYSQLBOX
+    sudo docker start $DEVBOX
+    ;;
+  stop)
+    verbose "## Stop Environment"
+    sudo docker stop $MYSQLBOX
+    sudo docker stop $DEVBOX
+    ;;
+  rebuild)
+    verbose "## Rebuild dev box"
+    sudo docker stop $DEVBOX
+    sudo docker rm $DEVBOX
+    sudo docker run --name $DEVBOX -e WORDPRESS_DB_NAME=$DEVBOX -p $PORT:80 -v $(pwd):/srv --link $MYSQLBOX:mysql -d wordpress
+    sudo docker-enter $DEVBOX /srv/init_wp.sh
+    ;;
+  enter)
+    verbose "## Enter dev box"
+    sudo docker-enter $DEVBOX
+    ;;
+  *)
+    echo "Don't know command $COMMAND"
+    exit 1
+    ;;
+esac
