@@ -5,6 +5,14 @@
   display: block;
 }
 
+body {
+  background-image: url('../../images/background.png');
+}
+
+div.site-inner {
+  background: white;
+}
+
 /* Sidebar */
 
 section.social-icons-widget {
