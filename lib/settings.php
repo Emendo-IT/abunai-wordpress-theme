@@ -1,7 +1,7 @@
 <?php
 /* Extra Settings */
 function abunai_theme_defaults ( $defaults ) {
-  $defaults['desktop_header_image_url'] = 'http://placehold.it/1200x400';
+  $defaults['desktop_header_image_url'] = 'http://placehold.it/1200x250';
   $defaults['mobile_header_image_url'] = 'http://placehold.it/800x100';
   return $defaults;
 }

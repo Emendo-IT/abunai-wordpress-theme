@@ -1849,7 +1849,7 @@ li.comment {
 /* line 4, ../sass/_header.scss */
 .desktopheader {
   float: left;
-  width: 800px;
+  width: 1200px;
 }
 
 /* line 8, ../sass/_header.scss */
@@ -1897,7 +1897,7 @@ li.comment {
 
   /* line 12, ../sass/_desktop.scss */
   div.site-inner {
-    background: white;
+    background: #F0F0F0;
   }
 
   /* Sidebar */
