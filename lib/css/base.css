@@ -1157,7 +1157,7 @@ img.alignright,
 
 /* line 856, ../sass/_init.scss */
 .site-header .wrap {
-  padding: 40px 0;
+  padding: 0;
 }
 
 /* ## Title Area
@@ -1384,7 +1384,7 @@ img.alignright,
 /* line 1059, ../sass/_init.scss */
 .entry {
   margin-bottom: 40px;
-  padding: 50px 60px;
+  padding: 40px 60px;
 }
 
 /* line 1064, ../sass/_init.scss */
