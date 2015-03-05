@@ -22,7 +22,13 @@ add_theme_support( 'genesis-responsive-viewport' );
 //* Add support for 3-column footer widgets
 add_theme_support( 'genesis-footer-widgets', 3 );
 
+//* Remove secondary Sidebar
+unregister_sidebar( 'sidebar-alt' );
+unregister_sidebar( 'header-right');
+
+
 //* Load all elements of child theme
 include_once( 'lib/settings.php' );
 include_once( 'lib/header.php' );
 include_once( 'lib/handleiding.php' );
+include_once( 'lib/menu.php' );
