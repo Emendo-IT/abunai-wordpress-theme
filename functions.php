@@ -26,3 +26,4 @@ add_theme_support( 'genesis-footer-widgets', 3 );
 include_once( 'lib/settings.php' );
 include_once( 'lib/header.php' );
 include_once( 'lib/handleiding.php' );
+include_once( 'lib/menu.php' );
