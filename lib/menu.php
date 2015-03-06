@@ -20,4 +20,15 @@ function theme_menu_extras( $menu, $args ) {
   return $menu;
 }
 
+// Register responsive menu script
+add_action( 'wp_enqueue_scripts', 'abunai_enqueue_scripts' );
+/**
+ * Enqueue responsive javascript
+ * @author Ozzy Rodriguez
+ * @todo Change 'prefix' to your theme's prefix
+ */
+function abunai_enqueue_scripts() {
+  wp_enqueue_script( 'abunai-responsive-menu', get_stylesheet_directory_uri() . '/lib/js/responsive-menu.js', array( 'jquery' ), '1.0.0', true ); 
+  // Change 'prefix' to your theme's prefix
+}
 ?>

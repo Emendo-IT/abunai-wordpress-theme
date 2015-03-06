@@ -7,6 +7,9 @@
 // Manage Header
 @import 'header';
 
+// Style for mobile menu
+@import 'mobilemenu';
+
 // Media Specific stuff
 @media only screen and (max-width: 800px) {
   @import 'mobile';
