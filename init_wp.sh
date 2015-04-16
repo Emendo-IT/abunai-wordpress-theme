@@ -9,5 +9,6 @@ cd /var/www/html
 sleep 2
 # Do base
 $WP core install --url=127.0.0.1:8080 --title=devbox --admin_user=admin --admin_password=admin --admin_email="root@local.nl"
+$WP plugin install --activate wp-example-content
 
 
