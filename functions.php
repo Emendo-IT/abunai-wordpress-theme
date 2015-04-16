@@ -32,3 +32,11 @@ include_once( 'lib/settings.php' );
 include_once( 'lib/header.php' );
 include_once( 'lib/handleiding.php' );
 include_once( 'lib/menu.php' );
+
+//* Customize the post info function
+add_filter( 'genesis_post_info', 'sp_post_info_filter' );
+function sp_post_info_filter($post_info) {
+if ( !is_page() ) {
+  $post_info = '[post_date] [post_comments] [post_edit]';
+  return $post_info;
+}}

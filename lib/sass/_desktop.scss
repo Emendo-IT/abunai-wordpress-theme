@@ -27,3 +27,11 @@ section.social-icons-widget {
     }
   }
 }
+
+footer.site-footer {
+  div.wrap {
+    p {
+      background: transparentize(white,0.25);
+    }
+  }
+}
