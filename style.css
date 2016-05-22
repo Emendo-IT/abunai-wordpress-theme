@@ -3,3 +3,8 @@
  * Template Version: 2.1.2
  */
 @import "lib/css/base.css";
+
+.genesis-nav-menu a {
+  padding-left: 10px;
+  padding-right: 10px;
+}
